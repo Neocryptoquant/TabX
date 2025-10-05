@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TabX</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --primary-orange: #FF6B35;
+        --dark-charcoal: #1a1d29;
+        --dark-charcoal-secondary: #2c3142;
+        --electric-blue: #00B4D8;
+        --cream-white: #FFFBF5;
+        --success-green: #06D6A0;
+        --error-coral: #EF476F;
+        --gray-light: #E5E5E5;
+        --gray-med: #9FA0A8;
+        --gray-dark: #6C6D75;
+      }
+
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: var(--dark-charcoal);
+        color: var(--gray-light);
+      }
+      
+      .btn-primary {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.625rem 1.25rem; /* 10px 20px */
+        border-radius: 8px;
+        background-color: var(--primary-orange);
+        color: white;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        transition: all 0.2s ease;
+        box-shadow: 0 4px 14px 0 rgba(255, 107, 53, 0.39);
+      }
+      .btn-primary:hover {
+        background-color: #ff845c;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px 0 rgba(255, 107, 53, 0.5);
+      }
+      .btn-primary:disabled {
+        background-color: var(--gray-dark);
+        cursor: not-allowed;
+        box-shadow: none;
+        transform: none;
+      }
+      
+      .btn-secondary {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.625rem 1.25rem;
+        border-radius: 8px;
+        background-color: transparent;
+        border: 2px solid var(--primary-orange);
+        color: var(--primary-orange);
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        transition: all 0.2s ease;
+      }
+       .btn-secondary:hover {
+        background-color: rgba(255, 107, 53, 0.1);
+        color: #ff845c;
+        border-color: #ff845c;
+      }
+      
+      .input-field {
+        background-color: var(--dark-charcoal-secondary);
+        border: 1px solid #4a5066;
+        border-radius: 8px;
+        padding: 0.625rem 0.875rem; /* 10px 14px */
+        color: var(--cream-white);
+        width: 100%;
+        transition: all 0.2s ease;
+      }
+      .input-field:focus {
+        outline: none;
+        border-color: var(--primary-orange);
+        box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.3);
+      }
+      
+      .card {
+        background-color: var(--dark-charcoal-secondary);
+        border: 1px solid #4a5066;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        transition: all 0.2s ease-in-out;
+      }
+      .card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      }
+      
+      .tab-active {
+        border-bottom: 3px solid var(--primary-orange) !important;
+        color: var(--primary-orange) !important;
+      }
+      
+      .zebra-table tbody tr:nth-child(even) {
+        background-color: rgba(255, 255, 255, 0.02);
+      }
+      .zebra-table tbody tr:hover {
+        background-color: rgba(255, 107, 53, 0.1);
+      }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.22.0",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/"
+  }
+}
+</script>
+</head>
+<body class="bg-dark-charcoal text-cream-white">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+</body>
+</html>
